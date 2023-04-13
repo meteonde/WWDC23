@@ -17,6 +17,7 @@ let package = Package(
             name: "WWDC2023",
             targets: ["AppModule"],
             bundleIdentifier: "Developer-Academy-Manaus.WWDC2023",
+            teamIdentifier: "ZAB7W22P8K",
             displayVersion: "1.0",
             bundleVersion: "1",
             appIcon: .placeholder(icon: .leaf),
@@ -27,8 +28,6 @@ let package = Package(
             ],
             supportedInterfaceOrientations: [
                 .portrait,
-                .landscapeRight,
-                .landscapeLeft,
                 .portraitUpsideDown(.when(deviceFamilies: [.pad]))
             ]
         )
