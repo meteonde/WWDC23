@@ -17,6 +17,8 @@ class MenuScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
+        StoryController.shared.storyIndex = 1
+        StoryController.shared.animationIndex = 0
         addChild(menuBackground)
         addChild(playButton)
     }
@@ -39,7 +41,7 @@ class MenuScene: SKScene {
     
     lazy var playButton : SKSpriteNode = {
         let sprite = ButtonNode(defaultTexture: "Start_1", pressedTexture: "Start_2"){
-            self.view?.presentScene(Story1Scene.newScene())
+            self.view?.presentScene(AboutScene.newScene())
         }
         
         sprite.position = CGPoint(x: size.width / 2, y: 247)

@@ -9,7 +9,7 @@ import Foundation
 import SpriteKit
 
 class AnimationScene: SKScene {
-    
+  
     let animationNames = ["intro", "scene", "Cigana", "Cigana"]
     
     class func newScene() -> AnimationScene {
@@ -47,9 +47,11 @@ class AnimationScene: SKScene {
     }()
     
     lazy var nextSceneButton : SKSpriteNode = {
+    
         let sprite = ButtonNode(defaultTexture: "next1", pressedTexture: "next2"){
             StoryController.shared.storyIndex += 2
             StoryController.shared.animationIndex += 1
+            
             self.view?.presentScene(Story1Scene.newScene())
         }
         

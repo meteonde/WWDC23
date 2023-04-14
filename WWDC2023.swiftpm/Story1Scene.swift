@@ -10,6 +10,8 @@ import SpriteKit
 
 class Story1Scene: SKScene {
     
+    let musics = ["scene1","scene2","scene3","scene4"]
+
     let storyNames = "Storytelling"
     
     class func newScene() -> Story1Scene {
@@ -19,6 +21,7 @@ class Story1Scene: SKScene {
     }
     
     override func didMove(to view: SKView) {
+        SoundManager.shared.playsound(sound: musics[StoryController.shared.animationIndex], type: "mp3")
         addChild(homeButton)
         addChild(nextSceneButton)
         addChild(storyBackground)
@@ -43,8 +46,10 @@ class Story1Scene: SKScene {
     
     lazy var homeButton : SKSpriteNode = {
         let sprite = ButtonNode(defaultTexture: "home1", pressedTexture: "home2"){
+            SoundManager.shared.playerStop()
             self.view?.presentScene(MenuScene.newScene())
         }
+        
         
         sprite.position = CGPoint(x: size.width / 8, y: 1200)
         sprite.zPosition = 1
@@ -69,6 +74,7 @@ class Story1Scene: SKScene {
             self.view?.presentScene(AnimationScene.newScene())
         }
         
+       
         sprite.position = CGPoint(x: size.width - 155, y: 147)
         sprite.zPosition = 1
         
