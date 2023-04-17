@@ -44,7 +44,7 @@ class MenuScene: SKScene {
             self.view?.presentScene(AboutScene.newScene())
         }
         
-        sprite.position = CGPoint(x: size.width / 2, y: 247)
+        sprite.position = CGPoint(x: size.width / 2, y: 205)
         
         return sprite
     }()

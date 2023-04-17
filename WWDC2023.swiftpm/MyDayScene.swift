@@ -49,7 +49,7 @@ class MyDayScene: SKScene {
         
         sprite.position = CGPoint(x: size.width / 2, y: size.height / 2)
         
-        sprite.run(.repeatForever(.animate(with: texture, timePerFrame: 0.1)))
+        sprite.run(.repeatForever(.animate(with: texture, timePerFrame: 0.3)))
         
         return sprite
     }()
@@ -59,7 +59,7 @@ class MyDayScene: SKScene {
             self.view?.presentScene(PickView.newScene())
         }
         
-        sprite.position = CGPoint(x: size.width / 2, y: 247)
+        sprite.position = CGPoint(x: size.width / 2, y: 205)
         
         return sprite
     }()
