@@ -33,8 +33,13 @@ class AnimationScene: SKScene {
         
         sprite.position = CGPoint(x: size.width / 2, y: size.height / 2)
         
+        print(StoryController.shared.animationIndex)
         if(animationNames[StoryController.shared.animationIndex] == "cena"){
-            sprite.run(.repeatForever(.animate(with: .init(whithFormat: "\(animationNames[StoryController.shared.animationIndex]) %@", range: 1...x[StoryController.shared.animationIndex]), timePerFrame: 0.1)))
+            if StoryController.shared.animationIndex != 3{
+                sprite.run(.repeatForever(.animate(with: .init(whithFormat: "\(animationNames[StoryController.shared.animationIndex]) %@", range: 1...x[StoryController.shared.animationIndex]), timePerFrame: 0.1)))
+            }else {
+                sprite.run(.repeatForever(.animate(with: .init(whithFormat: "\(animationNames[StoryController.shared.animationIndex]) %@", range: 1...x[StoryController.shared.animationIndex]), timePerFrame: 0.2)))
+            }
            
         }
         else{
@@ -63,7 +68,11 @@ class AnimationScene: SKScene {
             StoryController.shared.storyIndex += 2
             StoryController.shared.animationIndex += 1
             
-            self.view?.presentScene(Story1Scene.newScene())
+            if StoryController.shared.animationIndex < 4{
+                self.view?.presentScene(Story1Scene.newScene())
+            }else {
+                self.view?.presentScene(ExploreScene.newScene())
+            }
         }
         
         sprite.position = CGPoint(x: size.width - 155, y: 147)
