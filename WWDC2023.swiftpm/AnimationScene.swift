@@ -9,9 +9,12 @@ import Foundation
 import SpriteKit
 
 class AnimationScene: SKScene {
-  
-    let animationNames = ["intro", "scene", "Cigana", "Cigana"]
     
+   
+    let x = [30,60,32,44]
+    let animationNames = ["intro", "scene", "Cigana", "cena"]
+    
+  
     class func newScene() -> AnimationScene {
         let scene = AnimationScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         scene.scaleMode = .aspectFill
@@ -26,11 +29,19 @@ class AnimationScene: SKScene {
     
     lazy var storyBackground : SKSpriteNode = {
         
-        let sprite = SKSpriteNode(texture: SKTexture(imageNamed: "\(animationNames[StoryController.shared.animationIndex])1"), size:  SKTexture(imageNamed: "\(animationNames[StoryController.shared.animationIndex])1").size())
+        let sprite = SKSpriteNode(texture: SKTexture(imageNamed: "\(animationNames[StoryController.shared.animationIndex])1"), size: CGSize(width: 1024, height: 1366))
         
         sprite.position = CGPoint(x: size.width / 2, y: size.height / 2)
         
-        sprite.run(.repeatForever(.animate(with: .init(whithFormat: "\(animationNames[StoryController.shared.animationIndex])%@", range: 1...30), timePerFrame: 0.1)))
+        if(animationNames[StoryController.shared.animationIndex] == "cena"){
+            sprite.run(.repeatForever(.animate(with: .init(whithFormat: "\(animationNames[StoryController.shared.animationIndex]) %@", range: 1...x[StoryController.shared.animationIndex]), timePerFrame: 0.1)))
+           
+        }
+        else{
+            sprite.run(.repeatForever(.animate(with: .init(whithFormat: "\(animationNames[StoryController.shared.animationIndex])%@", range: 1...x[StoryController.shared.animationIndex]), timePerFrame: 0.1)))
+         
+        }
+       
         sprite.zPosition = 0
         return sprite
     }()
