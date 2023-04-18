@@ -11,7 +11,7 @@ import SpriteKit
 class AnimationScene: SKScene {
     
    
-    let x = [30,60,32,44]
+    let x = [30,60,32,23]
     let animationNames = ["intro", "scene", "Cigana", "cena"]
     
   
