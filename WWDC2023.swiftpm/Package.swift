@@ -8,13 +8,13 @@ import PackageDescription
 import AppleProductTypes
 
 let package = Package(
-    name: "WWDC2023",
+    name: "The Enchanted Oracle",
     platforms: [
         .iOS("15.2")
     ],
     products: [
         .iOSApplication(
-            name: "WWDC2023",
+            name: "The Enchanted Oracle",
             targets: ["AppModule"],
             bundleIdentifier: "Developer-Academy-Manaus.WWDC2023",
             teamIdentifier: "ZAB7W22P8K",
