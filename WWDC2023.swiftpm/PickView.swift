@@ -76,7 +76,7 @@ class PickView: SKScene {
     }()
     
     lazy var backButton : SKSpriteNode = {
-        let sprite = ButtonNode(defaultTexture: "back1", pressedTexture: "back2"){
+        let sprite = ButtonNode(defaultTexture: "voltar1", pressedTexture: "voltar2"){
             if self.clickedOneMoreTime{
                 self.view?.presentScene(MyDayScene.newScene())
             }else {
