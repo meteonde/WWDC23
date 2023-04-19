@@ -23,6 +23,7 @@ public class SoundManager{
         
         do{
             player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            player?.numberOfLoops = -1
             player?.play()
             print("tocando")
         }
