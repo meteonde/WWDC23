@@ -1,1 +1,1 @@
-# WWDC23
+# Olá! Sou o Matheus Souza, estudante de Design. Desde cedo, minha intuição tem me guiado. Com interesse nos mitos e lendas da minha cultura amazônica, decidi estudar o tarot e unir essas duas paixões em uma experiência única chamada The Enchanted Oracle. Acredito que nossa intuição pode ser uma grande aliada em momentos importantes de nossas vidas. Então, respire fundo, abra sua mente e venha comigo nessa pequena jornada. Estou animado para compartilhar essa experiência com você!
